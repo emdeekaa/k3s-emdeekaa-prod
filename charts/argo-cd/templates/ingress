@@ -1,0 +1,31 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: argocd-ingress
+  namespace: emdeekaa-argocd
+  annotations:
+#    cert-manager.io/cluster-issuer: letsencrypt-staging
+#    ingress.kubernetes.io/whitelist-source-range: 192.168.1.0
+#    nginx.ingress.kubernetes.io/whitelist-source-range: "77.169.198.36/32" # 192.168.2.0/24,10.43.0.0/16,
+#     nginx.ingress.kubernetes.io/ssl-redirect: "false"
+#  nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+#   nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+#   nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: argo.k3s.emdeekaa.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: argo-cd-argocd-server
+            port:
+              number: 80
+  tls:
+  - hosts:
+    - argo.k3s.emdeekaa.com
+    secretName: argo-k3s-emdeekaa-com-secret
