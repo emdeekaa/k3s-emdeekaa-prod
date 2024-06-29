@@ -1,0 +1,36 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: emdeekaa-gitea-postgresql-pv
+  namespace: emdeekaa-gitea
+spec:
+  capacity:
+    storage: 8Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: emdeekaa-gitea-iscsi-client
+  iscsi:
+    targetPortal: 192.168.2.101:3260
+#    targetPortal: 172.16.64.250:3260
+    iqn: iqn.2003-01.org.linux-iscsi.emdeekaa:emdeekaa-gitea-postgresql.prd
+#    iqn: iqn.2004-04.com.qnap:ts-453pro:iscsi.postgresql.e5f4ae
+    lun: 0
+    fsType: ext4  # Aanpassen aan het juiste bestandssysteem
+#  secrets:
+#    - secretName: iscsi-secret
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: emdeekaa-gitea-minio
+  namespace: emdeekaa-gitea
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+     storage: 8Gi
+  storageClassName: emdeekaa-gitea-iscsi-client
+  volumeName: emdeekaa-gitea-postgresql-pv
