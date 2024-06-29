@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1
 kind: Application
 metadata:
-  name: gitea-app
+  name: metallb-app
   namespace: emdeekaa-argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -9,13 +9,11 @@ spec:
   project: default
   source:
     repoURL: https://github.com/emdeekaa/k3s-emdeekaa-prod.git
-    path: charts/gitea/
-#    secretRef: 
-#      name: github-credentials
+    path: charts/metallb/
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
-    namespace: emdeekaa-gitea
+    namespace: emdeekaa-metallb
   syncPolicy:
     automated:
       selfHeal: true
