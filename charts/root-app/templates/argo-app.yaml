@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd-app
+  namespace: emdeekaa-argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/emdeekaa/k3s-emdeekaa-prod.git
+    path: charts/argocd/
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: emdeekaa-argocd
+  syncPolicy:
+    automated:
+      selfHeal: true
