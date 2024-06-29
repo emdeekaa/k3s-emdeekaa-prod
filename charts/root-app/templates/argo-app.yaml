@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/emdeekaa/k3s-emdeekaa-prod.git
-    path: charts/argocd/
+    path: charts/arg-cd/
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
