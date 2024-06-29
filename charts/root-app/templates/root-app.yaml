@@ -8,12 +8,12 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/emdeekaa/k8s-emdeekaa-prod.git
+    repoURL: https://github.com/emdeekaa/k3s-emdeekaa-prod.git
     path: charts/root-app/
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: emdeekaa-argocd
   syncPolicy:
     automated:
       selfHeal: true
