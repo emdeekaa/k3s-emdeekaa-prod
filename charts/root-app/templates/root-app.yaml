@@ -10,8 +10,8 @@ spec:
   source:
     repoURL: https://github.com/emdeekaa/argocd.git
     path: charts/root-app/
-    secretRef: 
-      name: github-credentials
+#    secretRef: 
+#      name: github-credentials
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
