@@ -1,2 +1,6 @@
-ingress-nginx:
-
+cert-manager:
+  global:
+#    installCRDs: false
+    crds:
+      enabled: true
+      keep: true
