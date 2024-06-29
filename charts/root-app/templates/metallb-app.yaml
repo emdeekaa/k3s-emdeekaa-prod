@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: metallb-app
+  namespace: emdeekaa-metallb
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/emdeekaa/k3s-emdeekaa-prod.git
+    path: charts/metallb/
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: emdeekaa-metallb
+  syncPolicy:
+    automated:
+      selfHeal: true
