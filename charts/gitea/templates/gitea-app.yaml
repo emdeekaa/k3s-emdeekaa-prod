@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gitea-app
+  namespace: emdeekaa-argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/emdeekaa/argocd.git
+    path: charts/gitea/
+    secretRef: 
+      name: github-credentials
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: emdeekaa-gitea
+  syncPolicy:
+    automated:
+      selfHeal: true
