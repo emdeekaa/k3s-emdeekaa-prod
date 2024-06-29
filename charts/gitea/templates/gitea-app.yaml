@@ -8,7 +8,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/emdeekaa/argocd.git
+    repoURL: https://github.com/emdeekaa/k3s-emdeekaa-prod.git
     path: charts/gitea/
     secretRef: 
       name: github-credentials
