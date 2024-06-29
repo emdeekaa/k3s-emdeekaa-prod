@@ -1,4 +1,4 @@
 gitea:
   persistence:
     enabled: true
-    claimName: gitae-postgresql-pvc
+    claimName: gitea-postgresql-pvc

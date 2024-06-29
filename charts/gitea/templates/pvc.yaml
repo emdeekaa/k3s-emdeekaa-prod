@@ -24,7 +24,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: gitae-postgresql-pvc
+  name: gitea-postgresql-pvc
   namespace: emdeekaa-gitea
 spec:
   accessModes:
