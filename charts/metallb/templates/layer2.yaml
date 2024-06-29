@@ -1,0 +1,15 @@
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: lan-emdeekaa
+  namespace: emdeekaa-metallb
+spec:
+  addresses:
+  - 192.168.2.110-192.168.2.120
+
+---
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement
+metadata:
+  name: l2-emdeekaa
+  namespace: emdeekaa-metallb
