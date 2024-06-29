@@ -1,0 +1,7 @@
+apiVersion: v2
+name: gitea
+dependencies:
+  - name: gite
+    version: 10.2.0
+    repository: https://dl.gitea.com/charts/
+
