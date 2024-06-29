@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: metallb-app
-  namespace: emdeekaa-metallb
+  namespace: emdeekaa-argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
