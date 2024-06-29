@@ -1,6 +1,5 @@
 cert-manager:
-  global:
-    installCRDs: true
-    crds:
-      enabled: true
-      keep: true
+  installCRDs: true
+#    crds:
+#      enabled: true
+#      keep: true
