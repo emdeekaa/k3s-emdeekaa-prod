@@ -1,4 +1,4 @@
-apiVersion: argoproj.io/v1
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: root-app
@@ -8,14 +8,12 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/emdeekaa/k3s-emdeekaa-prod.git
+    repoURL: https://github.com/emdeekaa/k8s-emdeekaa-prod.git
     path: charts/root-app/
-#    secretRef: 
-#      name: github-credentials
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
-    namespace: emdeekaa-argocd
+    namespace: default
   syncPolicy:
     automated:
       selfHeal: true
