@@ -25,3 +25,4 @@ argo-cd:
       clientSecret: 9H228uMz55bCvU3oSAQZ8xsjXlHrOP8v3eKvPMoivt6JHcobA8JnZHWBCI5ARzrml2AwG8onJPNYQeB7RAnpRTpjWufMjANcb4qayKpfJYX9VVaGurs8YhdVj6tEsYrI
       requestedScopes: ["openid", "profile", "email", "groups"]
       redirectURI: https://argo.k3s.emdeekaa.com/argocd/callback
+      logoutURL: https://authentik.emdeekaa.com/logout
