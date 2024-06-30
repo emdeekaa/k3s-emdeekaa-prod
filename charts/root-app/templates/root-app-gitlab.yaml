@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: root-app-gitlab
+  name: emdeekaa-root-app
   namespace: emdeekaa-argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
