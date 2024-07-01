@@ -25,3 +25,4 @@ argo-cd:
       requestedScopes: ["openid", "profile", "email", "groups"]
       redirectURI: https://argo.k3s.emdeekaa.com/argocd/callback
       logoutURL: https://authentik.emdeekaa.com/logout
+  url: https://argo.k3s.emdeekaa.com
