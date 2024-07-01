@@ -17,8 +17,6 @@ argo-cd:
   applicationSet:
     enabled: false
   server:
-    extraArgs:
-      - --insecure
     oidcConfig:
       name: auth
       clientID: P0Zh3mwk1JmdiMnhwwXtpuLOADzJ2puylloMJwUg
