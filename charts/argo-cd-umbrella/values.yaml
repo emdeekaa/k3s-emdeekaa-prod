@@ -26,7 +26,7 @@ argo-cd:
       redirectURI: https://argo.k3s.emdeekaa.com/argocd/callback
       logoutURL: https://authentik.emdeekaa.com/logout
     ingress:
-      enabled: true
+      enabled: false
       hosts:
         - argo.k3s.emdeekaa.com
       paths: ["/"]
