@@ -5,26 +5,16 @@ argo-cd:
     enabled: true
     config: |
       connectors:
-        - type: oidc
-          id: authentik
-          name: Authentik
-          config:
-            issuer: https://authentik.emdeekaa.com
-            clientID: P0Zh3mwk1JmdiMnhwwXtpuLOADzJ2puylloMJwUg
-            clientSecret: 9H228uMz55bCvU3oSAQZ8xsjXlHrOP8v3eKvPMoivt6JHcobA8JnZHWBCI5ARzrml2AwG8onJPNYQeB7RAnpRTpjWufMjANcb4qayKpfJYX9VVaGurs8YhdVj6tEsYrI
-            redirectURI: https://argo.k3s.emdeekaa.com/argocd/callback
-            logoutURL: https://authentik.emdeekaa.com/logout
-  notifications:
-    enabled: false
-  applicationSet:
-    enabled: false
-  server:
-    oidcConfig:
-      name: auth
-      clientID: P0Zh3mwk1JmdiMnhwwXtpuLOADzJ2puylloMJwUg
-      issuer: https://authentik.emdeekaa.com
-      clientSecret: 9H228uMz55bCvU3oSAQZ8xsjXlHrOP8v3eKvPMoivt6JHcobA8JnZHWBCI5ARzrml2AwG8onJPNYQeB7RAnpRTpjWufMjANcb4qayKpfJYX9VVaGurs8YhdVj6tEsYrI
-      requestedScopes: ["openid", "profile", "email", "groups"]
-      redirectURI: https://argo.k3s.emdeekaa.com/argocd/callback
-      logoutURL: https://authentik.emdeekaa.com/logout
-  
+      - config:
+              issuer: https://authentik.emdeekaa.com/application/o/<application slug defined in step 2>/
+              clientID: P0Zh3mwk1JmdiMnhwwXtpuLOADzJ2puylloMJwUg
+              clientSecret: 9H228uMz55bCvU3oSAQZ8xsjXlHrOP8v3eKvPMoivt6JHcobA8JnZHWBCI5ARzrml2AwG8onJPNYQeB7RAnpRTpjWufMjANcb4qayKpfJYX9VVaGurs8YhdVj6tEsYrI
+              insecureEnableGroups: true
+              scopes:
+                - openid
+                - profile
+                - email
+            name: authentik
+            type: oidc
+            id: authentik
+
