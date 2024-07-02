@@ -1,4 +1,10 @@
 argo-cd:
+  configs:
+    cm:
+      admin.enabled: true
+      policy.csv: |
+        g, ArgoCD Admins, role:admin
+        g, ArgoCD Viewers, role:readonly
   global:
     domain: argo.k3s.emdeekaa.com
   dex:
@@ -30,4 +36,3 @@ argo-cd:
       requestedScopes: ["openid", "profile", "email", "groups"]
       redirectURI: https://argo.k3s.emdeekaa.com/argocd/callback
       logoutURL: https://authentik.emdeekaa.com/logout
-  
