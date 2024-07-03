@@ -21,7 +21,7 @@ argo-cd:
         p, role:admin, metrics, *, *, allow
         g, ArgoCD Admins, role:admin
         g, ArgoCD Viewers, role:readonly
-      scopes: "[groups]"
+      scopes: "[openid, profile, email, groups]"
 
   oidc:
     enabled: true
@@ -47,6 +47,7 @@ argo-cd:
                 - openid
                 - profile
                 - email
+                - groups
             name: authentik
             type: oidc
             id: authentik
