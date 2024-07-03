@@ -5,6 +5,19 @@ argo-cd:
       policy.csv: |
         g, ArgoCD Admins, role:admin
         g, ArgoCD Viewers, role:readonly
+        p, role:admin, applications, *, *, allow
+        p, role:admin, clusters, *, *, allow
+        p, role:admin, repositories, *, *, allow
+        p, role:admin, certificates, *, *, allow
+        p, role:admin, projects, *, *, allow
+        p, role:admin, accounts, *, *, allow
+        p, role:admin, gpgkeys, *, *, allow
+        p, role:admin, logs, *, *, allow
+        p, role:admin, configmaps, *, *, allow
+        p, role:admin, secrets, *, *, allow
+        p, role:admin, serviceaccounts, *, *, allow
+        p, role:admin, events, *, *, allow
+        p, role:admin, metrics, *, *, allow
   oidc:
     enabled: true
     issuer: https://authentik.emdeekaa.com/application/o/argocd/
@@ -34,18 +47,3 @@ argo-cd:
             id: authentik
       create: true
       admin.enabled: true
-  rbac:
-    policy.csv: |
-      p, role:admin, applications, *, *, allow
-      p, role:admin, clusters, *, *, allow
-      p, role:admin, repositories, *, *, allow
-      p, role:admin, certificates, *, *, allow
-      p, role:admin, projects, *, *, allow
-      p, role:admin, accounts, *, *, allow
-      p, role:admin, gpgkeys, *, *, allow
-      p, role:admin, logs, *, *, allow
-      p, role:admin, configmaps, *, *, allow
-      p, role:admin, secrets, *, *, allow
-      p, role:admin, serviceaccounts, *, *, allow
-      p, role:admin, events, *, *, allow
-      p, role:admin, metrics, *, *, allow
