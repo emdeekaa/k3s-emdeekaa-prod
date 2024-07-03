@@ -4,8 +4,6 @@ argo-cd:
     rbac:
       create: true
       policy.csv: |
-        g, ArgoCD Admins, role:admin
-        g, ArgoCD Viewers, role:readonly
         p, role:admin, applications, *, *, allow
         p, role:admin, clusters, *, *, allow
         p, role:admin, repositories, *, *, allow
@@ -19,6 +17,8 @@ argo-cd:
         p, role:admin, serviceaccounts, *, *, allow
         p, role:admin, events, *, *, allow
         p, role:admin, metrics, *, *, allow
+        g, ArgoCD Admins, role:admin
+        g, ArgoCD Viewers, role:readonly
   oidc:
     enabled: true
     issuer: https://authentik.emdeekaa.com/application/o/argocd/
