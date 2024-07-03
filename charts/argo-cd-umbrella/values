@@ -17,7 +17,7 @@ argo-cd:
       extra:
         dex.authentik.clientSecret: "9H228uMz55bCvU3oSAQZ8xsjXlHrOP8v3eKvPMoivt6JHcobA8JnZHWBCI5ARzrml2AwG8onJPNYQeB7RAnpRTpjWufMjANcb4qayKpfJYX9VVaGurs8YhdVj6tEsYrI"
     cm:
-      url: https://argocd.company
+      url: https://argo.k3s.emdeekaa.com
       dex.config: |
           connectors:
           - config:
@@ -35,7 +35,7 @@ argo-cd:
       create: true
       admin.enabled: true
 
-    # OIDC configuration as an alternative to dex (optional).
+    # OIDC configuration as an alternative to dex (must).
     oidc.config: |
       name: Authentik
       issuer: https://authentik.emdeekaa.com/application/o/argocd/
