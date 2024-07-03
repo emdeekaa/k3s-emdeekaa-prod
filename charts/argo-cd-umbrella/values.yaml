@@ -35,11 +35,10 @@ argo-cd:
       create: true
       admin.enabled: true
       rbac:
-        cm:
-          policy.csv: |
-            p, role:readonly, applications, get, */*, allow
-            p, role:readonly, repositories, get, */*, allow
-            p, role:readonly, clusters, get, */*, allow
-            p, role:admin, *, *, */*, allow
-            g, ArgoCD Admins, role:admin
-          scopes: '[groups]'
+        policy.csv: |
+          p, role:readonly, applications, get, */*, allow
+          p, role:readonly, repositories, get, */*, allow
+          p, role:readonly, clusters, get, */*, allow
+          p, role:admin, *, *, */*, allow
+          g, ArgoCD Admins, role:admin
+        scopes: '[groups]'
