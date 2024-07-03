@@ -32,20 +32,21 @@ argo-cd:
       admin.enabled: true
   rbac:
     create: true
-    policy.csv: |
-      p, role:admin, applications, *, *, allow
-      p, role:admin, clusters, *, *, allow
-      p, role:admin, repositories, *, *, allow
-      p, role:admin, certificates, *, *, allow
-      p, role:admin, projects, *, *, allow
-      p, role:admin, accounts, *, *, allow
-      p, role:admin, gpgkeys, *, *, allow
-      p, role:admin, logs, *, *, allow
-      p, role:admin, configmaps, *, *, allow
-      p, role:admin, secrets, *, *, allow
-      p, role:admin, serviceaccounts, *, *, allow
-      p, role:admin, events, *, *, allow
-      p, role:admin, metrics, *, *, allow
-      g, ArgoCD Admins, role:admin
-      g, ArgoCD Viewers, role:readonly
+    cm:
+      policy.csv: |
+        p, role:admin, applications, *, *, allow
+        p, role:admin, clusters, *, *, allow
+        p, role:admin, repositories, *, *, allow
+        p, role:admin, certificates, *, *, allow
+        p, role:admin, projects, *, *, allow
+        p, role:admin, accounts, *, *, allow
+        p, role:admin, gpgkeys, *, *, allow
+        p, role:admin, logs, *, *, allow
+        p, role:admin, configmaps, *, *, allow
+        p, role:admin, secrets, *, *, allow
+        p, role:admin, serviceaccounts, *, *, allow
+        p, role:admin, events, *, *, allow
+        p, role:admin, metrics, *, *, allow
+        g, ArgoCD Admins, role:admin
+        g, ArgoCD Viewers, role:readonly
     scopes: "[groups,openid,email,profile]"
