@@ -32,8 +32,6 @@ argo-cd:
             id: authentik
       create: true
       admin.enabled: true
-
-  server:
     rbac:
       policy.csv: |
         p, role:readonly, applications, get, */*, allow
