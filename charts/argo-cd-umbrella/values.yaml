@@ -20,7 +20,7 @@ argo-cd:
         id: authentik
         name: Authentik
         config:
-          issuer: https://authentik.emdeekaa.com/application/o/argo/
+          issuer: https://authentik.emdeekaa.com/application/o/argocd/
           clientID: P0Zh3mwk1JmdiMnhwwXtpuLOADzJ2puylloMJwUg
           clientSecret: 9H228uMz55bCvU3oSAQZ8xsjXlHrOP8v3eKvPMoivt6JHcobA8JnZHWBCI5ARzrml2AwG8onJPNYQeB7RAnpRTpjWufMjANcb4qayKpfJYX9VVaGurs8YhdVj6tEsYrI
           redirectURI: https://argo.k3s.emdeekaa.com/auth/callback
