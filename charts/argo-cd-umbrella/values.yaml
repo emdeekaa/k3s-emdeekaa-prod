@@ -1,29 +1,14 @@
 argo-cd:
   global:
     domain: argo.k3s.emdeekaa.com
-    cm:
-      policy.csv: |
-        g, ArgoCD Admins, role:admin
-        g, ArgoCD Viewers, role:readonly
-        p, role:admin, applications, *, *, allow
-        p, role:admin, clusters, *, *, allow
-        p, role:admin, repositories, *, *, allow
-        p, role:admin, certificates, *, *, allow
-        p, role:admin, projects, *, *, allow
-        p, role:admin, accounts, *, *, allow
-        p, role:admin, gpgkeys, *, *, allow
-        p, role:admin, logs, *, *, allow
-        p, role:admin, configmaps, *, *, allow
-        p, role:admin, secrets, *, *, allow
-        p, role:admin, serviceaccounts, *, *, allow
-        p, role:admin, events, *, *, allow
-        p, role:admin, metrics, *, *, allow
+  
   oidc:
     enabled: true
     issuer: https://authentik.emdeekaa.com/application/o/argocd/
     clientId: "P0Zh3mwk1JmdiMnhwwXtpuLOADzJ2puylloMJwUg"
     clientSecret: "9H228uMz55bCvU3oSAQZ8xsjXlHrOP8v3eKvPMoivt6JHcobA8JnZHWBCI5ARzrml2AwG8onJPNYQeB7RAnpRTpjWufMjANcb4qayKpfJYX9VVaGurs8YhdVj6tEsYrI"
     insecureEnableGroups: true
+  
   configs:
     secret:
       extra:
@@ -47,3 +32,19 @@ argo-cd:
             id: authentik
       create: true
       admin.enabled: true
+      policy.csv: |
+        g, ArgoCD Admins, role:admin
+        g, ArgoCD Viewers, role:readonly
+        p, role:admin, applications, *, *, allow
+        p, role:admin, clusters, *, *, allow
+        p, role:admin, repositories, *, *, allow
+        p, role:admin, certificates, *, *, allow
+        p, role:admin, projects, *, *, allow
+        p, role:admin, accounts, *, *, allow
+        p, role:admin, gpgkeys, *, *, allow
+        p, role:admin, logs, *, *, allow
+        p, role:admin, configmaps, *, *, allow
+        p, role:admin, secrets, *, *, allow
+        p, role:admin, serviceaccounts, *, *, allow
+        p, role:admin, events, *, *, allow
+        p, role:admin, metrics, *, *, allow      
