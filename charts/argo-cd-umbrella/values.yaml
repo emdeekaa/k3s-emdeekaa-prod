@@ -20,7 +20,7 @@ argo-cd:
       p, role:admin, metrics, *, *, allow
       g, ArgoCD Admins, role:admin
       g, ArgoCD Viewers, role:readonly
-    scopes: "[openid, profile, email, groups]"
+    scopes: "[groups]"
 
   oidc:
     enabled: true
