@@ -2,27 +2,6 @@ argo-cd:
   global:
     domain: argo.k3s.emdeekaa.com
 
-  rbac:
-    create: true
-    policy.csv: |
-      p, role:admin, applications, *, *, allow
-      p, role:admin, clusters, *, *, allow
-      p, role:admin, repositories, *, *, allow
-      p, role:admin, certificates, *, *, allow
-      p, role:admin, projects, *, *, allow
-      p, role:admin, accounts, *, *, allow
-      p, role:admin, gpgkeys, *, *, allow
-      p, role:admin, logs, *, *, allow
-      p, role:admin, configmaps, *, *, allow
-      p, role:admin, secrets, *, *, allow
-      p, role:admin, serviceaccounts, *, *, allow
-      p, role:admin, events, *, *, allow
-      p, role:admin, metrics, *, *, allow
-      g, ArgoCD Admins, role:admin
-      g, ArgoCD Viewers, role:readonly
-    scopes: "[groups]"
-    policy.matchMode: "glob"
-
   oidc:
     enabled: true
     issuer: https://authentik.emdeekaa.com/application/o/argocd/
