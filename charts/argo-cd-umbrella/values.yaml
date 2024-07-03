@@ -42,6 +42,4 @@ argo-cd:
             p, role:readonly, clusters, get, */*, allow
             p, role:admin, *, *, */*, allow
             g, ArgoCD Admins, role:admin
-          
-
           scopes: '[groups]'
