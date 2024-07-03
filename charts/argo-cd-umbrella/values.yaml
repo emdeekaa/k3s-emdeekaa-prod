@@ -4,6 +4,7 @@ argo-cd:
 
   rbac:
     cm:
+      create: true
       policy.csv: |
         p, role:admin, applications, *, *, allow
         p, role:admin, clusters, *, *, allow
