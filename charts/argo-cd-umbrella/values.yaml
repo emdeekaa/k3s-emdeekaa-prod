@@ -21,6 +21,7 @@ argo-cd:
       g, ArgoCD Admins, role:admin
       g, ArgoCD Viewers, role:readonly
     scopes: "[groups]"
+    policy.matchMode: "glob"
 
   oidc:
     enabled: true
