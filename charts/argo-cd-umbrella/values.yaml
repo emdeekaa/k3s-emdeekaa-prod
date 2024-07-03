@@ -1,6 +1,11 @@
 argo-cd:
   global:
     domain: argo.k3s.emdeekaa.com
+  rbac:
+    cm:
+      policy.csv: |
+        g, ArgoCD Admins, role:admin
+        g, ArgoCD Viewers, role:readonly
   oidc:
     enabled: true
     issuer: https://authentik.emdeekaa.com/application/o/argocd/
@@ -8,6 +13,9 @@ argo-cd:
     clientSecret: "9H228uMz55bCvU3oSAQZ8xsjXlHrOP8v3eKvPMoivt6JHcobA8JnZHWBCI5ARzrml2AwG8onJPNYQeB7RAnpRTpjWufMjANcb4qayKpfJYX9VVaGurs8YhdVj6tEsYrI"
     insecureEnableGroups: true
   configs:
+    secret:
+      extra:
+        dex.authentik.clientSecret: "9H228uMz55bCvU3oSAQZ8xsjXlHrOP8v3eKvPMoivt6JHcobA8JnZHWBCI5ARzrml2AwG8onJPNYQeB7RAnpRTpjWufMjANcb4qayKpfJYX9VVaGurs8YhdVj6tEsYrI"
     cm:
       url: https://argocd.company
       dex.config: |
@@ -26,9 +34,7 @@ argo-cd:
             id: authentik
       create: true
       admin.enabled: true
-      policy.csv: |
-        g, ArgoCD Admins, role:admin
-        g, ArgoCD Viewers, role:readonly
+
     # OIDC configuration as an alternative to dex (optional).
     oidc.config: |
       name: Authentik
