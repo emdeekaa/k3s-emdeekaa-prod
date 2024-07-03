@@ -1,7 +1,6 @@
 argo-cd:
   global:
     domain: argo.k3s.emdeekaa.com
-  rbac:
     cm:
       policy.csv: |
         g, ArgoCD Admins, role:admin
