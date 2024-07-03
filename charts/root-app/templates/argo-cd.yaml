@@ -15,7 +15,5 @@ spec:
     server: https://kubernetes.default.svc
     namespace: emdeekaa-argocd
   syncPolicy:
-    syncOptions:
-    - PruneLast=true
     automated:
       selfHeal: true
